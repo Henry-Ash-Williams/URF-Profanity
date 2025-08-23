@@ -1,5 +1,11 @@
 # URF Profanity Identifier
 
+
+<p align="center">
+  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.com%2F7R0cugwI7k0AAAAC%2Fwatch-your-mouth-watch-your-profanity.gif&f=1&nofb=1&ipt=1d1d3ff67810bcb19216eba0dadc6425e66fa0b241e5329c01cac3df1545cf53" alt-text="watch yo profanity"/>
+</p>
+
+
 A simple script to identify the use of profanity on [University Radio Falmer](https://www.urfonline.com/) with OpenAI's [whisper](https://github.com/openai/whisper). 
 
 ## Install 
@@ -7,8 +13,8 @@ A simple script to identify the use of profanity on [University Radio Falmer](ht
 1. Clone the repo 
 
 ```sh
-$ git clone <insert url here>
-$ cd <insert repo name here>
+$ git clone https://github.com/Henry-Ash-Williams/URF-Profanity
+$ cd URF-profanity
 ```
 
 2. Install dependencies 
