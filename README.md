@@ -29,7 +29,7 @@ $ source .venv/bin/activate
 ```
 usage: main.py [-h] -o OUTPUT -n NAME [-s START] [-e END] [-c CREDENTIALS]
                [-m {tiny,base,small,medium,large,turbo}] [--save-snippets]
-               [--save-show] [--save-transcript]
+               [--save-show] [--save-transcript] [--offset OFFSET]
 
 Generate profanity reports for shows on URF
 
@@ -50,6 +50,7 @@ options:
   --save-snippets       Save profanity snippets
   --save-show           Save the show
   --save-transcript     Save the full transcript
+  --offset OFFSET       Offset amount for snippets
 ```
 
 ### Examples 

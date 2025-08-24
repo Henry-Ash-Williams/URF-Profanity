@@ -86,6 +86,9 @@ def parse_args():
         action="store_true",
         help="Save the full transcript",
     )
+    parser.add_argument(
+        "--offset", default=1000, help="Offset amount for snippets", type=int
+    )
 
     return parser.parse_args()
 
@@ -158,5 +161,5 @@ if __name__ == "__main__":
                 snippet_path = os.path.join(show_dir, "snippets")
                 os.makedirs(snippet_path, exist_ok=True)
                 console.log(f"{INFO} Saving audio snippets to {snippet_path}")
-                snippet_generator = SnippetGenerator(show_file, swears)
+                snippet_generator = SnippetGenerator(show_file, swears, args.offset)
                 snippet_generator.extract_snippets(snippet_path)
