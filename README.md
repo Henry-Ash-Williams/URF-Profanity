@@ -27,31 +27,38 @@ $ source .venv/bin/activate
 ## Usage 
 
 ```
-usage: main.py [-h] [--datetime YEAR MONTH DAY HOUR] [-c CREDENTIALS]
+usage: main.py [-h] -o OUTPUT -n NAME [-s START] [-e END] [-c CREDENTIALS]
+               [-m {tiny,base,small,medium,large,turbo}] [--save-snippets]
+               [--save-show] [--save-transcript]
+
+Generate profanity reports for shows on URF
 
 options:
   -h, --help            show this help message and exit
-  --datetime YEAR MONTH DAY HOUR
-                        Specify year, month, day, and hour together. Defaults
-                        to the last show broadcasted
+  -o OUTPUT, --output OUTPUT
+                        Where to save profanity reports and audio snippets
+  -n NAME, --name NAME  Name of the URF show
+  -s START, --start START
+                        Start timestamp in format YYYY-MM-DD HH:MM:SS,
+                        defaults to 2025-01-01 00:00:00
+  -e END, --end END     End timestamp in format YYYY-MM-DD HH:MM:SS, defaults
+                        to 2026-01-01 00:00:00
   -c CREDENTIALS, --credentials CREDENTIALS
-                        Path to the file storing the credentials for accessing
-                        the URF archive
+                        Path to `.env` file containing URF archive credentials
+  -m {tiny,base,small,medium,large,turbo}, --model {tiny,base,small,medium,large,turbo}
+                        Size of the whisper model, defaults to 'tiny'
+  --save-snippets       Save profanity snippets
+  --save-show           Save the show
+  --save-transcript     Save the full transcript
 ```
 
 ### Examples 
 
-Generate a report for a show at a specific time: 
+Generate reports for a show within a certain time range
 
 ```sh
-$ python main.py --datetime <year> <month> <day> <hour>
+$ python src/main.py -n "<Show Name>" -s "2025-01-01 00:00:00" -e "2025-06-01 00:00:00" -o "/path/to/reports"
 ``` 
-
-Or, for the last shows' broadcast: 
-
-```sh
-$ python main.py
-```
 
 ## Requirements 
 
